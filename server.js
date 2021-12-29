@@ -1,5 +1,5 @@
 require('dotenv').config()
-// const {PORT, DB_NAME, DB_PASSWORD, DB_HOST, DB_PORT} = process.env
+const {PORT, DB_NAME, DB_PASSWORD, DB_HOST, DB_PORT} = process.env
 const express = require('express')
 const cors = require('cors')
 const {OAuth2Client} = require('google-auth-library')
@@ -66,4 +66,4 @@ app.use('/cinema', require('./routes/cinema'))
 app.use('/seats', require('./routes/seats'))
 app.use('/receipt', require('./routes/receipt'))
 
-app.listen( console.log("Server is running in "))
+app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
